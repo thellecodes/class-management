@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: 'Mukta', sans-serif; }
+
+body {
+  background: #d8d8d8; }
+
+.container {
+  width: 65%;
+  margin-right: auto;
+  margin-left: auto; }
+
+.appNavbar {
+  text-align: center; }
+  .appNavbar a {
+    color: #000;
+    text-decoration: unset; }
+
+.home__wrapper {
+  background: #fff;
+  padding-top: 12px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+  display: grid;
+  grid-template-columns: 45% 55%; }
+
+.home__left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 12px; }
+  .home__left h1 {
+    font-size: 20px; }
+  .home__left img {
+    width: 200px;
+    height: 100px; }
+  .home__left ul li {
+    font-size: 13px;
+    margin-bottom: 5px; }
+
+.home__actions {
+  display: flex;
+  flex-direction: column; }
+
+.home__action {
+  margin: 10px 0px; }
+  .home__action button {
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 3px;
+    width: 100%;
+    padding: 20px 10px;
+    border: 2px solid #ccc;
+    font-size: 18px;
+    color: #000; }
+
+.class__wrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 50% 50%; }
+  .class__wrapper img {
+    width: 100px; }
+  .class__wrapper .class__wrapper__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+  .class__wrapper form {
+    margin-top: 20px; }
+    .class__wrapper form .form-group {
+      display: flex;
+      flex-direction: column; }
+    .class__wrapper form input {
+      padding: 10px 5px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      width: 100%; }
+  .class__wrapper button {
+    padding: 10px 5px;
+    cursor: pointer;
+    background-color: #000;
+    border: unset;
+    color: #fff; }
+
+.app__title {
+  margin-top: 20px;
+  font-size: 13px; }
+
+.tags {
+  min-width: 400px;
+  max-width: 600px;
+  margin: 1.5em 0; }
+
+.disabled .tags {
+  display: none; }
+  .disabled .tags + input,
+  .disabled .tags + textarea {
+    display: inline-block !important;
+    width: 350px;
+    padding: .5em;
+    border: 1px inset; }
+
+.home__manager {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+  color: #000;
+  font-size: 15px; }
+  .home__manager a {
+    text-decoration: unset;
+    color: #000;
+    font-weight: bold; }
+
+.student__wrapper {
+  margin-top: 10px; }
+  .student__wrapper table {
+    margin-top: 60px; }
+  .student__wrapper select {
+    width: 100%; }
+
+.students__cover {
+  background-color: #fff; }
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse; }
+
+th {
+  padding: 20px;
+  font-size: 15px; }
+
+td {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px; }
+
+.one__student {
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-top: 20px; }
+
+.one__student__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .one__student__left img {
+    width: 150px; }
+  .one__student__left h1 {
+    font-size: 18px;
+    margin-top: 20px; }
+
+.one__student__right ul li {
+  margin-bottom: 10px; }
+
+.one__student__right span {
+  font-size: 15px; }
+
+.one__actions {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px; }
+  .one__actions a {
+    margin-right: 20px;
+    color: #000;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: unset; }
+
+.del-btn {
+  border: unset;
+  padding: 5px 10px;
+  margin: 0px 18px;
+  background-color: #000;
+  color: #fff;
+  margin-bottom: 15px;
+  cursor: pointer; }
+
+.classes__wrapper {
+  background: #fff;
+  padding: 10px; }
+  .classes__wrapper li {
+    margin-bottom: 12px; }
+  .classes__wrapper a {
+    color: #000;
+    text-decoration: none; }

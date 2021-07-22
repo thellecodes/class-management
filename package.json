@@ -1,0 +1,39 @@
+{
+  "name": "classmanagement",
+  "version": "1.0.0",
+  "description": "A class management app for students",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "scss": "node-sass --watch scss/ -o client/src",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run scss\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git remote add origin https://github.com/boltdsg/class-management.git"
+  },
+  "keywords": [
+    "class",
+    "management"
+  ],
+  "author": "Samuel Anthony",
+  "license": "MIT",
+  "dependencies": {
+    "@yaireo/tagify": "^4.5.0",
+    "config": "^3.3.6",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "node-sass": "^4.14.1",
+    "select-pure": "^2.1.1-alpha.1",
+    "slugify": "^1.6.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.12"
+  }
+}
