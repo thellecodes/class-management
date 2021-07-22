@@ -95,10 +95,10 @@ const UpdateStudent = () => {
 
               <ul>
                 <li> Create a student</li>
-                <li>Add Student Name</li>
-                <li> Add Student to Class</li>
-                <li>Add Student Age</li>
-                <li>Add Studen Courses</li>
+                <li>Update Student Name</li>
+                <li> Update Student Class</li>
+                <li>Update Student Age</li>
+                <li>Update Student Course(s)</li>
               </ul>
             </div>
             <div className="class__wrapper__right">
