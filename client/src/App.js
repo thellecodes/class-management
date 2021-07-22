@@ -63,6 +63,11 @@ const HomeComponet = () => {
         <div className="home__actions">
           <>
             <div className="home__action">
+              <Link to="/create-course">
+                <button>Create a course</button>
+              </Link>
+            </div>
+            <div className="home__action">
               <Link to="/create-class">
                 <button>Create a class</button>
               </Link>
@@ -70,11 +75,6 @@ const HomeComponet = () => {
             <div className="home__action">
               <Link to="/create-student">
                 <button>Add a student</button>
-              </Link>
-            </div>
-            <div className="home__action">
-              <Link to="/create-course">
-                <button>Create a course</button>
               </Link>
             </div>
             <div className="home__manager">
