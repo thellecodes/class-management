@@ -13,23 +13,30 @@ import { getStudents } from "./store/actions/studentActions";
 
 /* Components */
 import AppNavbar from "./components/AppNavbar";
-import AdminClass from "./components/AdminClass";
-import AdminStudent from "./components/AdminStudent";
-import AdminCourse from "./components/AdminCourse";
-import Students from "./components/Students";
-import Classes from "./components/Classes";
-import ViewStudent from "./components/ViewStudent";
+
+/* Courses */
+import AdminCourse from "./components/Courses/AdminCourse";
+import Courses from "./components/Courses/Courses";
+import UpdateCourse from "./components/Courses/UpdateCourse";
+import ViewCourse from "./components/Views/ViewCourse";
+
+/* Classes */
+import AdminClass from "./components/Classes/AdminClass";
+import UpdateClass from "./components/Classes/UpdateClass";
+import Classes from "./components/Classes/Classes";
+import ViewClass from "./components/Views/ViewClass";
+
+/* Students */
+import AdminStudent from "./components/student/AdminStudent";
+import Students from "./components/student/Students";
 import UpdateStudent from "./components/student/UpdateStudent";
-import ViewClass from "./components/ViewClass";
-import UpdateClass from "./components/student/UpdateClass";
-import Courses from "./components/Courses";
-import ViewCourse from "./components/ViewCourse";
-import UpdateCourse from "./components/student/UpdateCourse";
+import ViewStudent from "./components/Views/ViewStudent";
 
 /* Avatar */
 const generator = new AvatarGenerator();
 const avatar = generator.generateRandomAvatar();
 
+/* Get Datas */
 store.dispatch(getStudents());
 store.dispatch(getClasses());
 store.dispatch(getCourses());
