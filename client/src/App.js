@@ -1,5 +1,5 @@
 import React from "react";
-import { Provider, useSelector } from "react-redux";
+import { Provider } from "react-redux";
 import { AvatarGenerator } from "random-avatar-generator";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -42,15 +42,12 @@ store.dispatch(getClasses());
 store.dispatch(getCourses());
 
 const HomeComponet = () => {
-  const { courses } = useSelector((state) => state.cou);
-  console.log(courses);
-
   return (
     <div className="container">
       <AppNavbar />
       <div className="home__wrapper">
         <div className="home__left">
-          <img src={avatar} />
+          <img src={avatar} alt="Avatar" />
 
           <h1>App Actions</h1>
           <ul>

@@ -12,17 +12,25 @@ const Courses = () => {
         <AppNavbar />
 
         <div className="classes__wrapper">
-          <ul className="allClasses">
-            {courses.map(({ course_name, slug }, id) => {
-              return (
-                <li key={id}>
-                  <Link to={`/about-course/${slug}`}>
-                    {course_name.toUpperCase()}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+          {courses.length > 0 ? (
+            <ul className="allClasses">
+              {courses.map(({ course_name, slug }, id) => {
+                return (
+                  <li key={id}>
+                    <Link to={`/about-course/${slug}`}>
+                      {course_name.toUpperCase()}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <div>
+              <h3>No Course Available</h3>
+              <br />
+              <Link to="/create-course"> Create a course</Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AppNavbar from "../AppNavbar";
 import { AvatarGenerator } from "random-avatar-generator";
-import { Link, withRouter, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteCourse } from "../../store/actions/classActions";
 
@@ -17,18 +17,17 @@ function ViewCourse() {
   const { students } = useSelector((state) => state.stu);
   const [courseStudents, setCourseStudents] = useState("");
 
-  const onDelete = (uid) => dispatch(deleteCourse(uid));
+  const onDelete = (id) => dispatch(deleteCourse(id));
 
   useEffect(() => {
     if (courseDetail) {
-      const studentList = students.map(({ student_course, student_name }) => {
-        if (student_course.includes(courseDetail.course_name)) {
-          return student_name.toUpperCase();
-        }
-        // return student_name;
-      });
-
-      console.log(studentList);
+      const studentList = students
+        .map(({ student_course, student_name }) => {
+          if (student_course.includes(courseDetail.course_name)) {
+            return student_name.toUpperCase();
+          }
+        })
+        .filter((student) => student != undefined);
 
       setCourseStudents(studentList);
     }
@@ -80,7 +79,7 @@ function ViewCourse() {
 
                 <button
                   className="del-btn"
-                  onClick={() => onDelete(courseDetail.uid)}
+                  onClick={() => onDelete(courseDetail.course_id)}
                 >
                   Delete Course
                 </button>

@@ -20,7 +20,7 @@ const AdminClass = () => {
     if (created) {
       history.push("/classes");
     }
-  }, [created]);
+  }, [created, history]);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -33,7 +33,7 @@ const AdminClass = () => {
       <AppNavbar />
       <div className="class__wrapper">
         <div className="class__wrapper__left">
-          <img src={avatar} />
+          <img src={avatar} alt="Avatar" />
 
           <h3>Classes</h3>
           <ul>

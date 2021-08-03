@@ -41,7 +41,7 @@ const AdminCourse = () => {
       <AppNavbar />
       <div className="class__wrapper">
         <div className="class__wrapper__left">
-          <img src={avatar} />
+          <img src={avatar} alt="Avatar" />
 
           <h1>Course Creation</h1>
           <ul>
@@ -64,20 +64,7 @@ const AdminCourse = () => {
               />
             </div>
 
-            {/* <div className="form-group">
-              <label htmlFor="assignstudents">
-                Assign Students to this Course
-              </label>
-              <input
-                type="text"
-                name="assignstudents"
-                id="assignstudents"
-                placeholder="Assign Students"
-                className="mb-3"
-              />
-            </div> */}
-
-            {errID == "COURSE__ERROR" ? (
+            {errID === "COURSE__ERROR" ? (
               <div
                 className="err-msgs"
                 style={{ color: "red", marginTop: "10px" }}
@@ -86,7 +73,7 @@ const AdminCourse = () => {
               </div>
             ) : null}
 
-            <button color="dark" style={{ marginTop: "1rem" }} block>
+            <button color="dark" style={{ marginTop: "1rem" }}>
               Create Course
             </button>
           </form>

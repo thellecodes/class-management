@@ -18,21 +18,23 @@ const UpdateStudent = () => {
   const { courses, updated } = useSelector((state) => state.cou);
   const { students } = useSelector((state) => state.stu);
 
-  const courseDetail = courses.filter(({ slug }) => slug == s_slug)[0];
+  const courseDetail = courses.filter(({ slug }) => slug === s_slug)[0];
 
   const { msg: errMsg, id: errID } = useSelector((state) => state.error);
   const [courseName, setCourseName] = useState("");
 
   useEffect(() => {
     var input1 = document.querySelector("input[name=tags]");
-    /* List of students offering current course */
 
     if (courseDetail) {
-      const studentList = students.map(({ student_course, student_name }) => {
-        if (student_course.includes(courseDetail.course_name.toLowerCase())) {
-          return student_name.toUpperCase();
-        }
-      });
+      const studentList = students
+        .map(({ student_course, student_name }) => {
+          if (student_course.includes(courseDetail.course_name.toLowerCase())) {
+            return student_name.toUpperCase();
+          }
+          return null;
+        })
+        .filter((std) => std != undefined);
 
       if (students.length > 0)
         new Tagify(input1, {

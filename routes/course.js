@@ -69,17 +69,17 @@ router.put("/", (req, res) => {
   );
 });
 
-router.delete("/:uid", (req, res) => {
-  const { uid } = req.params;
-  console.log(uid);
-  // let delQuery = "DELETE FROM courses WHERE uid = ?";
-  // db.query(delQuery, [uid], (err, result) => {
-  //   if (err) {
-  //     res.send(err).status(400);
-  //   } else {
-  //     res.json({ success: true }).status(200);
-  //   }
-  // });
+router.delete("/", (req, res) => {
+  const { course_id } = req.body;
+
+  let delQuery = "DELETE FROM courses WHERE course_id = ?";
+  db.query(delQuery, [course_id], (err, result) => {
+    if (err) {
+      res.send(err).status(400);
+    } else {
+      res.json({ success: true }).status(200);
+    }
+  });
 });
 
 module.exports = router;

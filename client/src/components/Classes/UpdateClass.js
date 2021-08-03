@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import AppNavbar from "../AppNavbar";
-import Tagify from "@yaireo/tagify";
 import { useSelector, useDispatch } from "react-redux";
 import { AvatarGenerator } from "random-avatar-generator";
 import { useParams } from "react-router-dom";
@@ -17,7 +16,7 @@ const UpdateClass = () => {
   const dispatch = useDispatch();
   const { classes, updated } = useSelector((state) => state.cla);
 
-  const classDetail = classes.filter(({ slug }) => slug == s_slug)[0];
+  const classDetail = classes.filter(({ slug }) => slug === s_slug)[0];
 
   const { msg: errMsg, id: errID } = useSelector((state) => state.error);
   const [className, setClassName] = useState("");
@@ -53,7 +52,7 @@ const UpdateClass = () => {
         {classDetail ? (
           <>
             <div className="class__wrapper__left">
-              <img src={avatar} />
+              <img src={avatar} alt="Avatar" />
 
               <ul>
                 <li> Update a class</li>

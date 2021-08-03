@@ -57,7 +57,6 @@ export const getCourses = () => (dispatch) => {
     });
 };
 
-
 /* Class Actions */
 export const createClass =
   ({ name }) =>
@@ -180,8 +179,7 @@ export const updateACourse =
       });
   };
 
-export const deleteCourse = (uid) => async (dispatch) => {
-  // Headers
+export const deleteCourse = (id) => async (dispatch) => {
   const config = {
     headers: {
       "Content-Type": "application/json",
@@ -189,11 +187,11 @@ export const deleteCourse = (uid) => async (dispatch) => {
   };
 
   await axios
-    .delete(`/api/course/${uid}`, config)
+    .delete(`/api/course`, { data: { course_id: `${id}` } }, config)
     .then(() => {
       dispatch({
         type: "COURSE_DELETED",
-        payload: uid,
+        payload: id,
       });
     })
     .catch((err) =>

@@ -5,6 +5,7 @@ const initialState = {
   courses: [],
   created: false,
   updated: false,
+  deleted: false,
 };
 
 export default (state = initialState, { payload, type }) => {
@@ -28,6 +29,11 @@ export default (state = initialState, { payload, type }) => {
       return {
         ...state,
         updated: true,
+      };
+    case "COURSE_DELETED":
+      return {
+        ...state,
+        deleted: true,
       };
     default:
       return state;

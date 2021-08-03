@@ -29,7 +29,7 @@ const AdminStudent = () => {
         highlightFirst: true,
       },
     });
-  }, []);
+  }, [Tagify]);
 
   const { msg: errMsg, id: errID } = useSelector((state) => state.error);
   const [studentName, setStudentName] = useState("");
