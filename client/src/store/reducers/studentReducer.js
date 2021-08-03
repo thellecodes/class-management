@@ -4,6 +4,7 @@ const initialState = {
   students: [],
   updated: false,
   deleted: false,
+  created: false,
 };
 
 export default (state = initialState, { payload, type }) => {
@@ -13,7 +14,11 @@ export default (state = initialState, { payload, type }) => {
         ...state,
         students: [...state.students, ...payload],
       };
-
+    case "STUDENT_CREATED":
+      return {
+        ...state,
+        created: true,
+      };
     case UPDATE_STUDENT:
       return {
         ...state,

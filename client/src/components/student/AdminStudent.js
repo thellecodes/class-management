@@ -14,7 +14,10 @@ const avatar = generator.generateRandomAvatar();
 const AdminStudent = () => {
   const dispatch = useDispatch();
   const { courses } = useSelector((state) => state.cou);
+  const { created } = useSelector((state) => state.stu);
   const courseList = courses.map((c) => c.course_name.toUpperCase());
+
+  console.log(courseList);
 
   useEffect(() => {
     var input1 = document.querySelector("input[name=tags]");
@@ -29,7 +32,13 @@ const AdminStudent = () => {
         highlightFirst: true,
       },
     });
-  }, [Tagify]);
+  }, []);
+
+  useEffect(() => {
+    if (created) {
+      return (window.location = "/students");
+    }
+  }, [created]);
 
   const { msg: errMsg, id: errID } = useSelector((state) => state.error);
   const [studentName, setStudentName] = useState("");
@@ -99,7 +108,6 @@ const AdminStudent = () => {
                 name="studentage"
                 id="studentage"
                 placeholder="Student Age"
-                className="mb-3"
                 onChange={(e) => setStudentAge(e.target.value)}
               />
 
@@ -109,7 +117,6 @@ const AdminStudent = () => {
                 name="tags"
                 id="assigncourses"
                 placeholder="Assign Courses"
-                className="mb-3"
               />
 
               <div className="student__wrapper">

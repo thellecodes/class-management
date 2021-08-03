@@ -24,9 +24,9 @@ export const createStudent =
       .post("/api/student/create", body, config)
       .then((res) => {
         const { data } = res.data;
-
         dispatch({ type: CLEAR_ERRORS });
         dispatch({ type: ADD_STUDENT, payload: [data] });
+        dispatch({ type: "STUDENT_CREATED" });
       })
       .catch((err) => {
         dispatch(

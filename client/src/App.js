@@ -1,5 +1,5 @@
 import React from "react";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import { AvatarGenerator } from "random-avatar-generator";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -42,6 +42,8 @@ store.dispatch(getClasses());
 store.dispatch(getCourses());
 
 const HomeComponet = () => {
+  const { courses } = useSelector((state) => state.cou);
+
   return (
     <div className="container">
       <AppNavbar />
@@ -58,28 +60,37 @@ const HomeComponet = () => {
         </div>
 
         <div className="home__actions">
-          <>
-            <div className="home__action">
+          {courses.length > 0 ? (
+            <>
+              <div className="home__action">
+                <Link to="/create-course">
+                  <button>Create a course</button>
+                </Link>
+              </div>
+              <div className="home__action">
+                <Link to="/create-class">
+                  <button>Create a class</button>
+                </Link>
+              </div>
+              <div className="home__action">
+                <Link to="/create-student">
+                  <button>Add a student</button>
+                </Link>
+              </div>
+              <div className="home__manager">
+                <Link to="/students">Manage Students</Link>
+                <Link to="/classes">Manage Classes</Link>
+                <Link to="/courses">Manage Courses</Link>
+              </div>
+            </>
+          ) : (
+            <div>
+              <h3>No Course Available</h3>
               <Link to="/create-course">
-                <button>Create a course</button>
+                <h4>Create a Course</h4>
               </Link>
             </div>
-            <div className="home__action">
-              <Link to="/create-class">
-                <button>Create a class</button>
-              </Link>
-            </div>
-            <div className="home__action">
-              <Link to="/create-student">
-                <button>Add a student</button>
-              </Link>
-            </div>
-            <div className="home__manager">
-              <Link to="/students">Manage Students</Link>
-              <Link to="/classes">Manage Classes</Link>
-              <Link to="/courses">Manage Courses</Link>
-            </div>
-          </>
+          )}
         </div>
       </div>
     </div>

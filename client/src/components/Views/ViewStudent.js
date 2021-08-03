@@ -14,6 +14,7 @@ function ViewStudent() {
 
   const { students, deleted } = useSelector((state) => state.stu);
   const studentDetail = students.filter(({ slug }) => slug == s_slug)[0];
+  const totalCourse = studentDetail.student_course.split(" ").length;
 
   const onDelete = (uid) => dispatch(deleteStudent(uid));
 
@@ -50,8 +51,7 @@ function ViewStudent() {
                   {studentDetail.student_course.toUpperCase()}
                 </li>
                 <li>
-                  <span>Total Number Courses</span>:
-                  {studentDetail.student_course.length}
+                  <span>Total Number Courses</span>:{totalCourse}
                 </li>
               </ul>
 
